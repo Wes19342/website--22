@@ -6,6 +6,14 @@
     <meta name="description" content="Document 1">
     <title>Document 1</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom variables for this document */
+        :root {
+            --section-bg-color: #2a2a2a; /* Custom background color */
+            --section-font-size: 1.1rem; /* Custom font size */
+            --section-text-align: justify; /* Custom text alignment */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,13 +22,13 @@
             <p>Subtitle or description for Document 1.</p>
         </header>
         <main>
-            <section>
+            <section class="customizable">
                 <h2>Section 1</h2>
-                <p>Write your content here. This is a paragraph to demonstrate the layout.</p>
+                <p>This section has customizable font size, background color, and text alignment.</p>
             </section>
-            <section>
+            <section class="customizable">
                 <h2>Section 2</h2>
-                <p>Add more sections or content as needed.</p>
+                <p>Adjust the CSS variables in the <code>:root</code> selector to customize.</p>
             </section>
         </main>
         <footer>
