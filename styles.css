@@ -52,13 +52,7 @@ main section {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-}
-
-/* Customization for sections */
-main section.customizable {
-    background-color: var(--section-bg-color, #1e1e1e);
-    text-align: var(--section-text-align, left);
-    font-size: var(--section-font-size, 1rem);
+    margin-bottom: 20px;
 }
 
 main section h2 {
@@ -73,22 +67,43 @@ main section p {
     line-height: 1.5;
 }
 
-/* Buttons */
-button {
-    background-color: #333;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
+/* Image Section */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-button:hover {
-    background-color: #444;
-    transform: scale(1.05);
+.image-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.image-item img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.image-item .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 25px; /* To position the bold title correctly */
+}
+
+.image-item .text-content h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.image-item .text-content p {
+    font-size: 1rem;
+    color: #d1d1d1;
 }
 
 /* Footer */
@@ -124,56 +139,4 @@ footer .footer-text {
 footer .footer-text p {
     font-size: 0.9rem;
     color: #b3b3b3;
-}
-
-/* Home Page Specific */
-.home-intro {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.home-intro h1 {
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.home-intro p {
-    font-size: 1.2rem;
-    color: #b3b3b3;
-}
-
-.document-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.document-card {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.document-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
-}
-
-.document-card a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.document-card p {
-    margin-top: 10px;
-    color: #b3b3b3;
-    font-size: 0.9rem;
 }
