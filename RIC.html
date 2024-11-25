@@ -17,13 +17,29 @@
             height: 100vh;
             margin: 0;
         }
+
         .password-container {
             text-align: center;
             background-color: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
+
+        .document-content {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
         input[type="password"] {
             padding: 10px;
             border: none;
@@ -31,6 +47,7 @@
             margin-bottom: 10px;
             width: 80%;
         }
+
         button {
             padding: 10px 20px;
             border: none;
@@ -40,28 +57,55 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #444;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="password-container">
+    <!-- Password Entry -->
+    <div class="password-container" id="passwordContainer">
         <h1>Enter Password</h1>
-        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="passwordInput" placeholder="Password">
         <button onclick="checkPassword()">Submit</button>
         <p id="error" style="color: red; display: none;">Incorrect password. Please try again.</p>
     </div>
 
+    <!-- Document Content -->
+    <div class="document-content" id="documentContent">
+        <h1>Protected Document</h1>
+        <p>This is the content of the protected document. It is only visible after entering the correct password.</p>
+        <section>
+            <h2>Section 1</h2>
+            <p>Content for section 1 goes here.</p>
+        </section>
+        <section>
+            <h2>Section 2</h2>
+            <p>Content for section 2 goes here.</p>
+        </section>
+    </div>
+
     <script>
-        const correctPassword = "psw"; // Set your password here
+        const correctPassword = "yourpassword123"; // Set your password here
 
         function checkPassword() {
-            const inputPassword = document.getElementById('password').value;
+            const inputPassword = document.getElementById('passwordInput').value;
+            const errorElement = document.getElementById('error');
+            const passwordContainer = document.getElementById('passwordContainer');
+            const documentContent = document.getElementById('documentContent');
+
             if (inputPassword === correctPassword) {
-                window.location.href = "document1.html"; // Redirect to your document
+                // Hide the password input and show the document
+                passwordContainer.classList.add("hidden");
+                documentContent.style.display = "flex";
             } else {
-                document.getElementById('error').style.display = "block";
+                // Show error message
+                errorElement.style.display = "block";
             }
         }
     </script>
