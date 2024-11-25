@@ -54,6 +54,13 @@ main section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Customization for sections */
+main section.customizable {
+    background-color: var(--section-bg-color, #1e1e1e);
+    text-align: var(--section-text-align, left);
+    font-size: var(--section-font-size, 1rem);
+}
+
 main section h2 {
     font-size: 1.8rem;
     color: #ffffff;
@@ -64,6 +71,24 @@ main section p {
     font-size: 1rem;
     color: #d1d1d1;
     line-height: 1.5;
+}
+
+/* Buttons */
+button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #444;
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -81,7 +106,7 @@ footer .logo {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    width: 120px; /* Increased logo size */
+    width: 120px; /* Larger logo */
     height: 120px;
 }
 
